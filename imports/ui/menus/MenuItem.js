@@ -12,7 +12,7 @@ class MenuItem extends Component {
 	}
 
 	componentDidMount () {
-		Meteor.call('menu.fetchContainers', this.props.item.id, (err, res) => {
+		Meteor.call('menu.fetchContainers', this.props.item, (err, res) => {
 			if (err) {
 				console.log(err);
 			}
@@ -30,6 +30,10 @@ class MenuItem extends Component {
 
 		const item = this.props.item;
 		const containers = this.state.containers;
+		const abv = item.abv ? `${item.abv} ABV ` : '';
+		const style = item.style ? item.style : '';
+		const dot = item.style ? <span>&middot; </span> : null;
+		const br = (!item.style && !item.abv) ? <br /> : null;
 
 		return (
 			
@@ -53,7 +57,7 @@ class MenuItem extends Component {
 				</div>
 				<div className="row">
 					<div className="col-xs-12 menu-item-detail">
-						<span style={{fontFamily: 'Archivo-Bold'}}>{item.abv} ABV &middot; {item.style}</span>
+						<span style={{fontFamily: 'Archivo-Bold'}}>{abv}{dot}{style}{br}</span>
 					</div>
 				</div>
 				<div className="row">
@@ -63,6 +67,8 @@ class MenuItem extends Component {
 				</div>
 				<div className="menu-item-container-wrapper">
 					{containers.map((container) => {
+
+						container.type = item.type;
 
 						return <MenuItemContainer key={container.id} container={container} />
 

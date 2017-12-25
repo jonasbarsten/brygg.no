@@ -52,9 +52,6 @@ class MenuWrapper extends Component {
 			selectedMenu = menus.filter(this.filterMenus.bind(this));
 		}
 
-		// console.log(selectedMenu);
-		// console.log(this.state.selectedMenu);
-
 		if (menus.length < 1 || selectedMenu.length < 1) {
 			return <Preloader />
 		}

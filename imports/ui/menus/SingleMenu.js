@@ -12,7 +12,7 @@ class SingleMenu extends Component {
 	}
 
 	componentDidMount () {
-		Meteor.call('menu.fetchSections', this.props.menu.id, (err, res) => {
+		Meteor.call('menu.fetchSections', this.props.menu, (err, res) => {
 			if (err) {
 				console.log(err);
 			}
@@ -35,6 +35,9 @@ class SingleMenu extends Component {
 					<span>{this.props.menu.name}</span>
 				</div>
 				{sections.map((section) => {
+
+					section.type = this.props.menu.type;
+
 					return <MenuSection key={section.id} section={section} />
 				})}
 			</div>

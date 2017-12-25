@@ -12,7 +12,7 @@ class MenuSection extends Component {
 	}
 
 	componentDidMount () {
-		Meteor.call('menu.fetchItems', this.props.section.id, (err, res) => {
+		Meteor.call('menu.fetchItems', this.props.section, (err, res) => {
 			if (err) {
 				console.log(err);
 			}
@@ -38,6 +38,9 @@ class MenuSection extends Component {
 					<span>{this.props.section.description}</span>
 				</div>
 				{items.map((item) => {
+
+					item.type = this.props.section.type;
+
 					return <MenuItem key={item.id} item={item} />
 				})}
 			</div>

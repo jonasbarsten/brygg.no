@@ -6,7 +6,7 @@ import { Bert } from 'meteor/themeteorchef:bert';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import 'draft-js-image-plugin/lib/plugin.css';
-import '../imports/ui/stylesheets/preloader-square.css';
+import '../imports/ui/stylesheets/preloader-beer.css';
 import '../imports/ui/stylesheets/sweetalert2.min.css';
 import '../imports/ui/stylesheets/react-datepicker.css';
 import '../imports/ui/stylesheets/style.css';
