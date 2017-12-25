@@ -1,42 +1,22 @@
 // REMEMBER: <meta charset="utf-8" /> to head in main html
 
 import React, { Component } from 'react';
-import { Editor, EditorState, convertFromRaw } from 'draft-js';
+import draftToHtml from 'draftjs-to-html';
 
-export default class BarstenViewer extends Component {
-
-	componentDidMount() {
-		if (this.props.content) {
-
-			const rawFromDB = convertFromRaw(this.props.content.editorState);
-			const newState = EditorState.createWithContent(rawFromDB);
-
-			this.setState({
-				editorState: newState
-			});
-		}
-	}	
-
-	constructor(props) {
-		super(props);
-		this.state = {
-				editorState: EditorState.createEmpty(),
-
-		};
-	}
+export default class BarstenViewer extends Component {	
 
 	render() {
 
 		const placeholder = this.props.placeholder ? this.props.placeholder : '';
 
-		return(
-			<div>
-				<Editor 
-					readOnly={true}
-					placeholder={placeholder}
-					editorState={this.state.editorState} 
-				/>
-			</div>
+		if (!this.props.content) {
+			return <p>{placeholder}</p>;
+		}
+
+		const content = draftToHtml(this.props.content.editorState);
+
+		return (
+			<div className={this.props.className} dangerouslySetInnerHTML={{ __html: content }} />
 		);
 	}
 }

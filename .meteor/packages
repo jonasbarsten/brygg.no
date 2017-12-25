@@ -23,7 +23,7 @@ gwendall:accounts-helpers
 accounts-password@1.5.0
 alanning:roles
 froatsnook:valid-email
-meteortoys:allthings
+# meteortoys:allthings
 aldeed:collection2-core
 aldeed:schema-index
 meteorhacks:ssr

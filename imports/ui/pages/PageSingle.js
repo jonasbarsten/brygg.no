@@ -29,15 +29,8 @@ class PageSingle extends Component {
 
 		return (
 			<div className="container-fluid no-side-padding">
-				<div className="page-single-banner">
-					<div className="text-banner">
-						<div className="v-align">
-							<h1>{page.name}</h1>
-						</div>
-					</div>
-				</div>
-				<div className="page-single-content">
-					<BarstenViewer key={page._id} content={page.content} placeholder='No content yet ...' />
+				<div className="row">
+					<BarstenViewer key={page._id} content={page.content} placeholder='No content yet ...' className="page-single-content col-xs-12" />
 				</div>
 			</div>
 		);

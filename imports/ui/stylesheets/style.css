@@ -55,6 +55,11 @@ a:hover {
 	text-decoration: none;
 }
 
+.no-side-padding {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
 .spacer-10 {
 	height: 10px;
 }
@@ -91,6 +96,15 @@ a:hover {
     vertical-align: middle;
     height: 100%;
     width: 100%;
+}
+
+.rdw-image-alignment-options-popup {
+	left: 60px;
+	/*top: 50px;*/
+}
+
+.rdw-image-alignment-options-popup:hover {
+	display: block;
 }
 
 																/*LAYOUTS*/
@@ -219,6 +233,54 @@ a:hover {
 																	/*USERS*/
 
 																	/*PAGES*/
+
+.page-single-content {
+	background-color: white;
+}
+
+.page-single-content p {
+	font-family: 'Archivo-Regular';
+	min-height: 20px;
+	font-size: 2em;
+}
+
+.page-single-content h1 {
+	font-family: 'Plaak6Ney-56-Heavy';
+	font-size: 4em;
+}
+
+.page-single-content h2 {
+	font-family: 'Plaak4Terme-34-RegularA';
+	font-size: 3.5em;
+}
+
+.page-single-content a {
+	font-family: 'Plaak6Ney-56-Heavy';
+	border: 5px solid black;
+	padding: 5px;
+	margin-top: 15px;
+	font-size: 2em;
+}
+
+.page-single-content ul {
+/*	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	border-radius: 0;
+	display: block;
+	margin-bottom: -10px;*/
+	font-family: 'Archivo-Regular';
+	list-style-type: none;
+	margin: 0;
+	padding: 20px;
+	background-color: #FFD576;
+	font-size: 2em;
+}
+
+.page-single-content img {
+	max-width: 100%;
+	min-width: 100%;
+}
 
 .page-content-appear {
 	opacity: 0;

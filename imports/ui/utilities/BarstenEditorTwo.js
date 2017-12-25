@@ -23,6 +23,20 @@ class BarstenEditor extends Component {
 		};
 	}
 
+	componentDidMount() {
+		
+		if (this.props.content) {
+
+			const rawFromDB = convertFromRaw(this.props.content.editorState);
+			const newState = EditorState.createWithContent(rawFromDB);
+
+			this.setState({
+				editorState: newState
+			});
+		}
+
+	}
+
 	onChange (editorState) {
 
 		this.setState({editorState});
@@ -114,18 +128,11 @@ class BarstenEditor extends Component {
 
 	}
 
-	componentDidMount() {
-		
-		if (this.props.content) {
-
-			const rawFromDB = convertFromRaw(this.props.content.editorState);
-			const newState = EditorState.createWithContent(rawFromDB);
-
-			this.setState({
-				editorState: newState
-			});
-		}
-
+	blockStyles (contentBlock) {
+	  const type = contentBlock.getType();
+	  if (type === 'unstyled') {
+	    return 'unstyled';
+	  }
 	}
 
 	render() {

@@ -503,6 +503,10 @@ draft-js@^0.10.4:
     immutable "~3.7.4"
     object-assign "^4.1.0"
 
+draftjs-to-html@^0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/draftjs-to-html/-/draftjs-to-html-0.8.1.tgz#a696789c61c689c01f7884a91c71944cc69738d7"
+
 draftjs-utils@^0.8.07:
   version "0.8.8"
   resolved "https://registry.yarnpkg.com/draftjs-utils/-/draftjs-utils-0.8.8.tgz#5835daed95f59d3ee1f96fdcbbb9809772c86490"
@@ -939,6 +943,12 @@ jsprim@^1.2.2:
 keycode@^2.1.2:
   version "2.1.9"
   resolved "https://registry.yarnpkg.com/keycode/-/keycode-2.1.9.tgz#964a23c54e4889405b4861a5c9f0480d45141dfa"
+
+linkify-it@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/linkify-it/-/linkify-it-2.0.3.tgz#d94a4648f9b1c179d64fa97291268bdb6ce9434f"
+  dependencies:
+    uc.micro "^1.0.1"
 
 lodash._basecallback@^3.0.0:
   version "3.3.1"
@@ -1535,13 +1545,14 @@ react-dom@^16.0.0:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
-react-draft-wysiwyg@^1.10.12:
-  version "1.10.12"
-  resolved "https://registry.yarnpkg.com/react-draft-wysiwyg/-/react-draft-wysiwyg-1.10.12.tgz#4a8c24094bde11dfbc540d86acd8321cb72ba01b"
+react-draft-wysiwyg@^1.12.2:
+  version "1.12.2"
+  resolved "https://registry.yarnpkg.com/react-draft-wysiwyg/-/react-draft-wysiwyg-1.12.2.tgz#37424a37b7d440532d6531ea52c5a31c9fe76b1f"
   dependencies:
     classnames "^2.2.5"
     draftjs-utils "^0.8.07"
-    prop-types "^15.5.10"
+    linkify-it "^2.0.3"
+    prop-types "^15.6.0"
 
 react-dropdown@^1.3.2:
   version "1.3.2"
@@ -1904,6 +1915,10 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
 ua-parser-js@^0.7.9:
   version "0.7.17"
   resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.17.tgz#e9ec5f9498b9ec910e7ae3ac626a805c4d09ecac"
+
+uc.micro@^1.0.1:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/uc.micro/-/uc.micro-1.0.3.tgz#7ed50d5e0f9a9fb0a573379259f2a77458d50192"
 
 uid-number@^0.0.6:
   version "0.0.6"
