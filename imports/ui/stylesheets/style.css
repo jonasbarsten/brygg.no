@@ -418,11 +418,12 @@ a:hover {
 }
 
 #reservations-form {
-	margin-top: 60px;
+	margin-top: 30px;
 }
 
 .reservation-datepicker {
 	text-align: -webkit-center;
+	margin-left: -29px;
 }
 
 
@@ -432,6 +433,7 @@ a:hover {
 	body {
 		font-size: 14px;
 	}
+
 
 	.mobile-clearfix {
 		clear: none;
@@ -550,6 +552,11 @@ a:hover {
 
 	.menu-selector-item-seperator {
 		display: inline;
+	}
+
+	.reservation-datepicker {
+		text-align: -webkit-center;
+		margin-left: -15px;
 	}
 
 

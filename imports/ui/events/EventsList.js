@@ -111,6 +111,9 @@ class EventsList extends Component {
 
 					const date = moment(event.date).format('DD.MM');
 
+					let name = event.name;
+					if (name.length > 25) name = name.substring(0,25) + ' ...';
+
 					return (
 						<div key={event.id}>
 							{monthHeader}
@@ -122,7 +125,7 @@ class EventsList extends Component {
 											<span style={{fontSize: '40px'}}>{date}</span>
 										</div>
 										<div style={{height: '50px', fontFamily: 'Plaak4Terme-24-Light'}} className="col-xs-6 col-sm-12 center-align-container">
-											<span style={{fontSize: '20px'}} className="text-center underline">{event.name}</span>
+											<span style={{fontSize: '20px'}} className="text-center underline">{name}</span>
 										</div>
 									</div>
 								</div>

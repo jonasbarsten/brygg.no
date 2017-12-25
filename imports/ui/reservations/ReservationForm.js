@@ -26,6 +26,10 @@ class ReservationForm extends Component {
 		}
 	}
 
+	componentDidMount () {
+		$(window).scrollTop();
+	}
+
 	// handleKeyPress (event) {
 	// 	if(event.key == 'Enter'){
 	// 		this.handleSubmit();
@@ -112,7 +116,7 @@ class ReservationForm extends Component {
 
 		return (
 			<div id="reservations-form-wrapper" className="row">
-				<div id="reservations-form" className="text-center">
+				<div id="reservations-form" className="text-center col-xs-12">
 
 					<h4>Send inn forespørsel</h4>
 
