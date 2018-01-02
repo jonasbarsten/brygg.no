@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { browserHistory } from 'react-router';
 import Preloader from '../utilities/Preloader';
 import SingleMenu from './SingleMenu';
 
@@ -31,12 +31,53 @@ class MenuWrapper extends Component {
 			}
 
 			if (res) {
+
 				this.setState({
-					menus: res,
-					selectedMenu: res[0].id
+					menus: res
+				});
+
+				this.renderMenu(this);
+
+			}
+
+		});
+	}
+
+	changeMenu (menu) {
+		browserHistory.push(`/menu?type=${menu.name}`);
+		this.setState({
+			selectedMenu: menu.id
+		});
+	}
+
+	renderMenu () {
+
+		const query = this.props.location.query.type ? this.props.location.query.type.toLowerCase() : null;
+		const menus = this.state.menus;
+
+		if (query) {
+			const queriedMenu = menus.filter((menu) => {
+				const fetchedName = menu.name.toLowerCase();
+				return fetchedName == query;
+			});
+
+			if (queriedMenu.length > 0) {
+				this.setState({
+					selectedMenu: queriedMenu[0].id
+				});
+			} else {
+				this.setState({
+					selectedMenu: menus[0].id
 				});
 			}
-		});
+
+		} else {
+
+
+			this.setState({
+				selectedMenu: menus[0].id
+			});
+		}
 	}
 
 	filterMenus (menu) {
@@ -70,7 +111,7 @@ class MenuWrapper extends Component {
 						return (
 							<div key={menu.id} style={{fontFamily: 'Plaak6Ney-36-Regular', display: 'inline'}}>
 								<div 
-									onClick={() => this.setState({selectedMenu: menu.id})}
+									onClick={this.changeMenu.bind(this, menu)}
 									className='menu-selector-item hover'
 								>
 									{menu.name}
