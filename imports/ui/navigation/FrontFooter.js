@@ -24,6 +24,8 @@ class FrontFooter extends Component {
 						</div>
 					</div>
 					<div className="col-xs-6 col-sm-4" style={{color: 'rgb(254,242,156)', fontFamily: 'Plaak6Ney-56-Heavy', fontSize: '12px'}}>
+						
+
 						{pagesInFooter.map((page) => {
 							const url = '/pages/' + page.urlFriendlyName;
 
@@ -33,6 +35,19 @@ class FrontFooter extends Component {
 								</Link>
 							);
 						})}
+
+						<Link to='/reservations'>
+							<div>Reservasjon</div>
+						</Link>
+						<Link to='/menu'>
+							<div>Meny</div>
+						</Link>
+						<Link to='/calendar'>
+							<div>Kalender</div>
+						</Link>
+						<a href='http://brygglab.no' target='blank'>
+							<div>Brygglab</div>
+						</a>
 
 					</div>
 					<div className="mobile-clearfix"></div>
