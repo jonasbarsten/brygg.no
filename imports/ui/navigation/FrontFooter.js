@@ -62,7 +62,7 @@ class FrontFooter extends Component {
 							<span>SØNDAG 12:00 TIL 03:00</span>
 							<br />
 							<br />
-							<span>TAPPEBAR ÅPNER KL 11:00</span>
+							<span>TAPPEBAR ÅPNER KL 12:00 på hverdager</span>
 						</div>
 					</div>
 				</div>

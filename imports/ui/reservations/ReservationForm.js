@@ -47,6 +47,12 @@ class ReservationForm extends Component {
 		hour = Number(hour);
 		minute = Number(minute);
 
+		if (this.refs.numberOfPeople.value < 6) {
+			this.setState({loading: false});
+			Bert.alert('Minimum 6 personer for å reservere', 'warning', 'growl-bottom-right', 'fa-smile-o');
+			return;
+		}
+
 		// Ingen reservasjoner etter kl18 på fredager
 		if (dayOfWeek == 5) {
 			if (hour >= 18) {
@@ -87,6 +93,7 @@ class ReservationForm extends Component {
 			reservationRequest.comment.length == 0
 			) {
 			Bert.alert('All fields are required', 'danger', 'growl-bottom-right', 'fa-frown-o');
+			this.setState({loading: false});
 		} else {
 
 			check(reservationRequest.name, String);
@@ -162,6 +169,11 @@ class ReservationForm extends Component {
 					<br />
 
 					<div className="row">
+
+						<div className="col-xs-12">
+							<p>Minimum 6 personer for å reservere</p>
+						</div>
+
 						<div className="col-sm-8 col-sm-offset-2">
 							<input 
 								ref="numberOfPeople" 
