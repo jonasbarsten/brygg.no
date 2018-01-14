@@ -92,7 +92,7 @@ class ReservationForm extends Component {
 			reservationRequest.time.length == 0 ||
 			reservationRequest.comment.length == 0
 			) {
-			Bert.alert('All fields are required', 'danger', 'growl-bottom-right', 'fa-frown-o');
+			Bert.alert('Alle felt er påkrevd', 'warning', 'growl-bottom-right', 'fa-smile-o');
 			this.setState({loading: false});
 		} else {
 
@@ -177,9 +177,10 @@ class ReservationForm extends Component {
 						<div className="col-sm-8 col-sm-offset-2">
 							<input 
 								ref="numberOfPeople" 
-								type="text" 
+								type="number" 
 								className="form-control text-center"
 								placeholder="antall personer"
+								min="6"
 							/>
 						</div>
 					</div>
