@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
-import { createContainer } from 'meteor/react-meteor-data';
+import { withTracker } from 'meteor/react-meteor-data';
 import Dropdown from 'react-dropdown';
 
 import 'react-datepicker/dist/react-datepicker.css';
@@ -105,10 +105,10 @@ class AddEvent extends Component {
 	}
 }
 
-export default createContainer(() => {
+export default withTracker(() => {
 	Meteor.subscribe('pages');
 
 	return {
 		pages: Pages.find({}, {fields: {name: 1, urlFriendlyName: 1}}).fetch()
 	};
-}, AddEvent);
+})(AddEvent);

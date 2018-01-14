@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { createContainer } from 'meteor/react-meteor-data';
+import { withTracker } from 'meteor/react-meteor-data';
 import moment from 'moment';
 import { browserHistory } from 'react-router';
 
@@ -92,10 +92,10 @@ class EditCard extends Component {
 	}
 }
 
-export default createContainer((props) => {
+export default withTracker((props) => {
 	Meteor.subscribe('cards');
 
 	return {
 		card: Cards.findOne({_id: props.params.cardId})
 	}
-}, EditCard);
+})(EditCard);

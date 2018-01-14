@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { createContainer } from 'meteor/react-meteor-data';
 import moment from 'moment';
 import { browserHistory } from 'react-router';
 import 'moment/locale/nb.js';

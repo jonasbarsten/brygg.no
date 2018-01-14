@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { createContainer } from 'meteor/react-meteor-data';
+import { withTracker } from 'meteor/react-meteor-data';
 import { Link } from 'react-router';
 
 import AddSingleCard from './AddSingleCard';
@@ -39,10 +39,10 @@ class CardsWrapper extends Component {
 	}
 };
 
-export default createContainer(() => {
+export default withTracker(() => {
 	Meteor.subscribe('cards');
 
 	return {
 		cards: Cards.find({}, {sort: {number: 1}}).fetch()
 	}
-}, CardsWrapper);
+})(CardsWrapper);

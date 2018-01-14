@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { createContainer } from 'meteor/react-meteor-data';
+import { withTracker } from 'meteor/react-meteor-data';
 import { Link } from 'react-router';
 
 class FrontFooter extends Component {
@@ -71,12 +71,12 @@ class FrontFooter extends Component {
 	}
 }
 
-export default createContainer(() => {
+export default withTracker(() => {
 	Meteor.subscribe('pages');
 
 	return {
 		pagesInFooter: Pages.find({isInFooter: true}).fetch()
 	}
 
-}, FrontFooter);
+})(FrontFooter);
 
