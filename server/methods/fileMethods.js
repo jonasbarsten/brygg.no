@@ -102,15 +102,17 @@ Meteor.methods({
 		file.dateAdded = moment().toDate();
 		file.addedBy = Meteor.userId();
 
+		let newFile;
+
 		if (type == 'image') {
-			Images.insert(file);
+			newFile = Images.insert(file);
 		}
 
 		if (type == 'file') {
-			Files.insert(file);
+			newFile = Files.insert(file);
 		}
 
-		return file;
+		return newFile;
 
 	},
 	'file.toTrash': function (fileId, type) {

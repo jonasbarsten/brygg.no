@@ -107,14 +107,16 @@ class BarstenEditor extends Component {
 									if (err) {
 										console.log(err);
 									} else {
-										const bucketUrl = 'http://' + Meteor.settings.public.aws.imageBucket + '.s3-website-' + Meteor.settings.public.aws.region + '.amazonaws.com/';
-										const size = this.props.maxImageSize ? (this.props.maxImageSize + '/') : '';
-										const awsUrl = bucketUrl + size + res.awsKey;
+										// const bucketUrl = 'http://' + Meteor.settings.public.aws.imageBucket + '.s3-website-' + Meteor.settings.public.aws.region + '.amazonaws.com/';
+										// const size = this.props.maxImageSize ? (this.props.maxImageSize + '/') : '';
+										// const awsUrl = bucketUrl + size + res.awsKey;
 
-										console.log(res);
+										// console.log(res);
+
+										const link = `/images/${res}`;
 
 										// Send response to Editor state?
-										resolve({data: {link: awsUrl}});
+										resolve({data: {link: link}});
 									}
 								});
 							}
