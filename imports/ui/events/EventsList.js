@@ -48,11 +48,13 @@ class EventsList extends Component {
 		});
 
 		// Group by "month year"
-		events = _.groupBy(events, (event) => {return moment(event.date).format('MMMM YYYY')});
+		events = _.groupBy(events, (event) => {
+			return moment(event.date).format('MMMM YYYY');
+		});
 
 		// Sort by "month year"
 		events = _.sortBy(events, (eventsInMonth, i) => {
-			return moment(i, "MMMM YYYY").toDate()
+			return moment(i, "MMMM YYYY").toDate();
 		});
 
 		// Newest month (furthest from year 0) first
@@ -67,6 +69,10 @@ class EventsList extends Component {
 
 		// Remove key
 		events = _.flatten(events);
+
+		if (this.props.limit) {
+			events = events.slice(0, this.props.limit);
+		}
 
 		return (
 			<div>
