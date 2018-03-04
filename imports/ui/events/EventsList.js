@@ -70,8 +70,31 @@ class EventsList extends Component {
 		// Remove key
 		events = _.flatten(events);
 
+
 		if (this.props.limit) {
-			events = events.slice(0, this.props.limit);
+
+			let closestUpcomingEvent = null;
+
+			for (i = 0; i < events.length; i++) {
+				if (!closestUpcomingEvent) {
+					if (moment(events[i].date).isSameOrAfter(new Date())) {
+						closestUpcomingEvent = i;
+					}
+				}
+			}
+
+			if (!closestUpcomingEvent) {
+				events = events.slice(0, this.props.limit);
+			} else {
+
+				// TODO: FIX THIS STUFF!
+				// SORTER LISTA BARE PÅ DATOER, IKKE PÅ MÅNEDER HER!!!
+				// I'm thinking: check if there are any more upcoming events, up to limit, if so, render them, if not, compensate backwards.
+				// Also consider if closestUpcomingEvent = null, in the case there are no upcoming events.
+
+
+				events = events.slice(0, this.props.limit);
+			}
 		}
 
 		return (
