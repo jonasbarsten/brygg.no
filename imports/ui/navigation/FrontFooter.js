@@ -19,8 +19,12 @@ class FrontFooter extends Component {
 							<br />
 						</div>
 						<div style={{marginTop: '20px'}}>
-							<img src="/images/icons/instagram.png" />
-							<img src="/images/icons/facebook.png" style={{marginLeft: '15px'}} />
+							<a href="https://www.instagram.com/bryggoslo/" target="blank">
+								<img src="/images/icons/instagram.png" />
+							</a>
+							<a href="https://www.facebook.com/bryggoslo/" target="blank">
+								<img src="/images/icons/facebook.png" style={{marginLeft: '15px'}} />
+							</a>
 						</div>
 					</div>
 					<div className="col-xs-6 col-sm-4" style={{color: 'rgb(254,242,156)', fontFamily: 'Plaak6Ney-56-Heavy', fontSize: '12px'}}>
