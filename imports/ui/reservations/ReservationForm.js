@@ -40,9 +40,20 @@ class ReservationForm extends Component {
 
 		this.setState({loading: true});
 
+		const selectedDate = this.state.date.format('YYYY-MM-DD');
 		const dayOfWeek = this.state.date.day();
 		let hour = this.state.time.split(':')[0];
 		let minute = this.state.time.split(':')[1];
+		const now = moment();
+		const currentDate = now.format('YYYY-MM-DD');
+
+		if (selectedDate == currentDate) {
+			if (now.hour() >= 14) {
+				this.setState({loading: false});
+				Bert.alert('Reserver før kl14 samme dag', 'warning', 'growl-bottom-right', 'fa-smile-o');
+				return;
+			}
+		}
 
 		hour = Number(hour);
 		minute = Number(minute);
@@ -112,7 +123,7 @@ class ReservationForm extends Component {
 					Bert.alert('Din forespørsel ble sendt!', 'success', 'growl-bottom-right', 'fa-smile-o');
 					browserHistory.push('/');
 				}
-			})
+			});
 		}
 		
 	}
@@ -171,7 +182,7 @@ class ReservationForm extends Component {
 					<div className="row">
 
 						<div className="col-xs-12">
-							<p>Minimum 6 personer for å reservere</p>
+							<h6>Minimum 6 personer for å reservere</h6>
 						</div>
 
 						<div className="col-sm-8 col-sm-offset-2">
@@ -188,6 +199,11 @@ class ReservationForm extends Component {
 					<br />
 
 					<div className="row">
+						<div className="col-xs-12">
+							<h6>Du kan reservere til senest kl18 på fredager og kl20 på lørdager.</h6>
+							<h6>Det må reserveres innen kl14 for reservasjon samme dag.</h6>
+							<br />
+						</div>
 						<div className="col-sm-8 col-sm-offset-2">
 							<div className="col-md-6 col-xs-12">
 								<div className="row reservation-datepicker">
