@@ -75,7 +75,7 @@ class EventsList extends Component {
 
 			let closestUpcomingEvent = null;
 
-			for (i = 0; i < events.length; i++) {
+			for (var i = 0; i < events.length; i++) {
 				if (!closestUpcomingEvent) {
 					if (moment(events[i].date).isSameOrAfter(new Date())) {
 						closestUpcomingEvent = i;
