@@ -66,9 +66,9 @@ class ReservationForm extends Component {
 
 		// Ingen reservasjoner etter kl18 på fredager
 		if (dayOfWeek == 5) {
-			if (hour >= 18) {
-				Bert.alert('Kun reservasjoner før kl18 på fredager', 'warning', 'growl-bottom-right', 'fa-smile-o');
-				this.setState({time: '17:59'});
+			if (hour > 17) {
+				Bert.alert('Kun reservasjoner før kl17 på fredager', 'warning', 'growl-bottom-right', 'fa-smile-o');
+				this.setState({time: '17:00'});
 				this.setState({loading: false});
 				return;
 			}
@@ -76,9 +76,9 @@ class ReservationForm extends Component {
 
 		// Ingen reservasjoner etter kl20 på lørdager
 		if (dayOfWeek == 6) {
-			if (hour >= 20) {
+			if (hour > 20) {
 				Bert.alert('Kun reservasjoner før kl20 på lørdager', 'warning', 'growl-bottom-right', 'fa-smile-o');
-				this.setState({time: '19:59'});
+				this.setState({time: '20:00'});
 				this.setState({loading: false});
 				return;
 			}
