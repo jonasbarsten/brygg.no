@@ -200,7 +200,7 @@ class ReservationForm extends Component {
 
 					<div className="row">
 						<div className="col-xs-12">
-							<h6>Du kan reservere til senest kl18 på fredager og kl20 på lørdager.</h6>
+							<h6>Du kan reservere til senest kl17 på fredager og kl20 på lørdager.</h6>
 							<h6>Det må reserveres innen kl14 for reservasjon samme dag.</h6>
 							<br />
 						</div>
