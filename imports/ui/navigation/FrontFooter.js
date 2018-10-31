@@ -69,6 +69,9 @@ class FrontFooter extends Component {
 							<br />
 							<br />
 							<span>TAPPEBAR ÅPNER KL 14:00 på hverdager og samtidig som åpning lørdag og søndag</span>
+							<br />
+							<br />
+							<span>ID: 20 år</span>
 						</div>
 					</div>
 				</div>
