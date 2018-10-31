@@ -51,12 +51,12 @@ class Home extends Component {
 								</div>
 							</div>
 						</Link>
-						<Link to="/pages/petanque">
+						<Link to="/pages/olsmaking">
 							<div className="col-xs-12 col-sm-4 home-item-text">
 								<div className="home-item-content">
 									<div className="table">
 										<div className="table-cell">
-											<span>PETANQUE</span>
+											<span>ØLSMAKING</span>
 										</div>
 									</div>
 								</div>
