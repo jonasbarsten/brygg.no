@@ -22,6 +22,7 @@ class AdminNav extends Component {
 		const menyActiveClass = (pathName == '/menu') ? 'active' : '';
 		const reservasjonActiveClass = (pathName == '/pages/reservation') ? 'active' : '';
 		const brygglabActiveClass = (pathName == '/pages/brygglab') ? 'active' : '';
+		const julebordActiveClass = (pathName == '/pages/julebord') ? 'active' : '';
 
 		return (
 			<nav id="front-navbar" className="navbar navbar-inverse">
@@ -39,6 +40,7 @@ class AdminNav extends Component {
 					<div className="collapse navbar-collapse no-transition" id="bs-example-navbar-collapse-1">
 						<ul className="nav navbar-nav navbar-right">
 							<li className={omActiveClass}><Link to="/pages/om-brygg">OM BRYGG</Link></li>
+							<li className={julebordActiveClass}><Link to="/pages/julebord">JULEBORD</Link></li>
 							<li className={kalenderActiveClass}><Link to="/calendar">KALENDER</Link></li>
 							<li className={menyActiveClass}><Link to="/menu">MENY</Link></li>
 							<li className={reservasjonActiveClass}><Link to="/reservations">RESERVASJON</Link></li>
