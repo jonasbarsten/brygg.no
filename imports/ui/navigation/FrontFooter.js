@@ -59,19 +59,16 @@ class FrontFooter extends Component {
 						<span>ÅPNINGSTIDER:</span>
 						<br />
 						<div style={{fontFamily: 'Plaak4Terme-34-RegularA'}}>
-							<span>MANDAG - TIRSDAG 08:00 TIL 01:00</span>
+							<span>MANDAG - TORSDAG 08:00 TIL 01:00</span>
 							<br />
-							<span>ONSDAG - FREDAG 08:00 TIL 03:00</span>
+							<span>FREDAG 08:00 TIL 03:00</span>
 							<br />
 							<span>LØRDAG 11:00 TIL 03:00</span>
 							<br />
 							<span>SØNDAG 15:00 TIL 23:00</span>
 							<br />
 							<br />
-							<span>TAPPEBAR ÅPNER KL 14:00 på hverdager og samtidig som åpning lørdag og søndag</span>
-							<br />
-							<br />
-							<span>ID: 20 år</span>
+							<span>ID: 20 år etter kl 18:00</span>
 						</div>
 					</div>
 				</div>
