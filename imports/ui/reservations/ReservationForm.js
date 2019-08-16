@@ -134,6 +134,15 @@ class ReservationForm extends Component {
 
 		return (
 			<div id="reservations-form-wrapper" className="row">
+
+				<div id="reservations-form" className="text-center col-xs-12">
+
+					<div className="panel panel-warning">
+					  <div className="panel-heading">Dersom du får en bekreftelse på e-post om at vi vil svare innen 24 timer, men ikke hører noe mer fra oss etter det, så send gjerne hele e-posten til <a href="mailto:post@brygg.no"><u>post@brygg.no</u></a>. Da er vi sikre på at henvendelsen din kommer fram.</div>
+					</div>
+
+				</div>
+
 				<div id="reservations-form" className="text-center col-xs-12">
 
 					<h4>Send inn forespørsel</h4>
