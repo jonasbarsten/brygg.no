@@ -138,6 +138,27 @@ class ReservationForm extends Component {
 				<div id="reservations-form" className="text-center col-xs-12">
 
 					<div className="panel panel-warning">
+					  <div className="panel-heading">Reservasjonsskjemaet vårt er midlertidig ute av drift, send en e-post til <a href="mailto:post@brygg.no"><u>post@brygg.no</u></a> for å reservere.</div>
+					</div>
+
+					<div className="panel panel-info">
+					  <div className="panel-heading">
+					  	<p>Minimum 6 personer for å reservere.</p>
+					  	<p>Du kan reservere til senest kl17 på fredager og kl20 på lørdager.</p>
+					  	<p>Det må reserveres innen kl14 for reservasjon samme dag.</p>
+					  </div>
+					</div>
+
+				</div>
+			</div>
+		);
+
+		return (
+			<div id="reservations-form-wrapper" className="row">
+
+				<div id="reservations-form" className="text-center col-xs-12">
+
+					<div className="panel panel-warning">
 					  <div className="panel-heading">Dersom du får en bekreftelse på e-post om at vi vil svare innen 24 timer, men ikke hører noe mer fra oss etter det, så send gjerne hele e-posten til <a href="mailto:post@brygg.no"><u>post@brygg.no</u></a>. Da er vi sikre på at henvendelsen din kommer fram.</div>
 					</div>
 
