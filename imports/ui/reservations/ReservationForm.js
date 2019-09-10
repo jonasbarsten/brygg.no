@@ -138,7 +138,7 @@ class ReservationForm extends Component {
 				<div id="reservations-form" className="text-center col-xs-12">
 
 					<div className="panel panel-warning">
-					  <div className="panel-heading">Reservasjonsskjemaet vårt er midlertidig ute av drift, send en e-post til <a href="mailto:post@brygg.no"><u>post@brygg.no</u></a> for å reservere.</div>
+					  <div className="panel-heading">Reservasjonsskjemaet vårt er midlertidig ute av drift, send en e-post til <a href="mailto:post@brygg.no"><u>post@brygg.no</u></a> for å reservere. Husk å skriv antall personer, ønsket dato og klokkeslett, navn, telefonnummer og eventuelt en kommentar. Takk!</div>
 					</div>
 
 					<div className="panel panel-info">
