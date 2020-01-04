@@ -41,7 +41,9 @@ class FrontFooter extends Component {
 		if (week === 2) {
 			openingHours =
 				<div style={{fontFamily: 'Plaak4Terme-34-RegularA'}}>
-					<span>MANDAG - TORSDAG 16:00 TIL 01:00</span>
+					<span>MANDAG OG TIRSDAG 16:00 TIL 00:00</span>
+					<br />
+					<span>ONSDAG OG TORSDAG 16:00 TIL 01:00</span>
 					<br />
 					<span>FREDAG 11:00 TIL 03:00</span>
 					<br />
