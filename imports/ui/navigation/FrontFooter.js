@@ -1,9 +1,74 @@
 import React, { Component } from 'react';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Link } from 'react-router';
+import moment from 'moment';
 
 class FrontFooter extends Component {
 	render () {
+
+		const week = moment().week();
+
+		let openingHours = 
+			<div style={{fontFamily: 'Plaak4Terme-34-RegularA'}}>
+				<span>MANDAG - TORSDAG 11:00 TIL 01:00</span>
+				<br />
+				<span>FREDAG 11:00 TIL 03:00</span>
+				<br />
+				<span>LØRDAG 11:00 TIL 03:00</span>
+				<br />
+				<span>SØNDAG 15:00 TIL 23:00</span>
+				<br />
+				<br />
+				<span>ID: 20 år etter kl 18:00</span>
+			</div>;
+
+		if (week === 1) {
+			openingHours =
+				<div style={{fontFamily: 'Plaak4Terme-34-RegularA'}}>
+					<span>TORSDAG: 14.00 TIL 01.00</span>
+					<br />
+					<span>FREDAG 11:00 TIL 03:00</span>
+					<br />
+					<span>LØRDAG 11:00 TIL 03:00</span>
+					<br />
+					<span>SØNDAG stengt pga julebord</span>
+					<br />
+					<br />
+					<span>ID: 20 år etter kl 18:00</span>
+				</div>;
+		}
+
+		if (week === 2) {
+			openingHours =
+				<div style={{fontFamily: 'Plaak4Terme-34-RegularA'}}>
+					<span>MANDAG - TORSDAG 16:00 TIL 01:00</span>
+					<br />
+					<span>FREDAG 11:00 TIL 03:00</span>
+					<br />
+					<span>LØRDAG 11:00 TIL 03:00</span>
+					<br />
+					<span>SØNDAG 15:00 TIL 23:00</span>
+					<br />
+					<br />
+					<span>ID: 20 år etter kl 18:00</span>
+				</div>;
+		}
+
+		if (week > 2 && week < 5) {
+			openingHours =
+				<div style={{fontFamily: 'Plaak4Terme-34-RegularA'}}>
+					<span>MANDAG - TORSDAG 14:00 TIL 01:00</span>
+					<br />
+					<span>FREDAG 11:00 TIL 03:00</span>
+					<br />
+					<span>LØRDAG 11:00 TIL 03:00</span>
+					<br />
+					<span>SØNDAG 15:00 TIL 23:00</span>
+					<br />
+					<br />
+					<span>ID: 20 år etter kl 18:00</span>
+				</div>;
+		}
 
 		const pagesInFooter = (this.props.pagesInFooter) ? this.props.pagesInFooter : [];
 
@@ -58,18 +123,7 @@ class FrontFooter extends Component {
 					<div className="col-xs-6 col-sm-4" style={{color: 'rgb(215,84,56)', fontFamily: 'Plaak6Ney-56-Heavy', fontSize: '12px'}}>
 						<span>ÅPNINGSTIDER:</span>
 						<br />
-						<div style={{fontFamily: 'Plaak4Terme-34-RegularA'}}>
-							<span>MANDAG - TORSDAG 08:00 TIL 01:00</span>
-							<br />
-							<span>FREDAG 08:00 TIL 03:00</span>
-							<br />
-							<span>LØRDAG 11:00 TIL 03:00</span>
-							<br />
-							<span>SØNDAG 15:00 TIL 23:00</span>
-							<br />
-							<br />
-							<span>ID: 20 år etter kl 18:00</span>
-						</div>
+						{openingHours}
 					</div>
 				</div>
 			</div>
