@@ -6,7 +6,9 @@ import moment from 'moment';
 class FrontFooter extends Component {
 	render () {
 
-		const week = moment().week();
+		// const week = moment("05-01-2020", "DDMMYYYY").week();
+
+		// console.log(week);
 
 		let openingHours = 
 			<div style={{fontFamily: 'Plaak4Terme-34-RegularA'}}>
@@ -22,7 +24,7 @@ class FrontFooter extends Component {
 				<span>ID: 20 år etter kl 18:00</span>
 			</div>;
 
-		if (week === 1) {
+		if (false) {
 			openingHours =
 				<div style={{fontFamily: 'Plaak4Terme-34-RegularA'}}>
 					<span>TORSDAG: 14.00 TIL 01.00</span>
@@ -38,7 +40,7 @@ class FrontFooter extends Component {
 				</div>;
 		}
 
-		if (week === 2) {
+		if (false) {
 			openingHours =
 				<div style={{fontFamily: 'Plaak4Terme-34-RegularA'}}>
 					<span>MANDAG OG TIRSDAG 16:00 TIL 00:00</span>
@@ -56,7 +58,7 @@ class FrontFooter extends Component {
 				</div>;
 		}
 
-		if (week > 2 && week < 5) {
+		if (true) {
 			openingHours =
 				<div style={{fontFamily: 'Plaak4Terme-34-RegularA'}}>
 					<span>MANDAG - TORSDAG 14:00 TIL 01:00</span>
